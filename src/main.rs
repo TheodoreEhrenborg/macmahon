@@ -1,3 +1,4 @@
+use rhai::Scope;
 use rhai::{Dynamic, Engine};
 use std::io::{self, BufRead};
 
@@ -8,6 +9,8 @@ fn main() -> io::Result<()> {
     // Read from stdin
     let stdin = io::stdin();
     let reader = stdin.lock();
+
+    let mut scope = Scope::new();
 
     // Process each line from stdin
     for line_result in reader.lines() {
@@ -20,7 +23,7 @@ fn main() -> io::Result<()> {
         };
 
         // Evaluate the expression
-        let processed_line = match engine.eval_expression::<Dynamic>(expression) {
+        let processed_line = match engine.eval_with_scope::<Dynamic>(&mut scope, expression) {
             Ok(result) => format!("{} => {}", expression, result),
             Err(_) => line.clone(), // Keep original line if evaluation fails
         };
