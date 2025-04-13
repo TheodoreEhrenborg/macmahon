@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "nixpkgs/de0fe301211c";
+    nixpkgs.url = "nixpkgs/f6db44a8daa5";
     flake-utils.url = "github:numtide/flake-utils";
   };
   outputs = {
@@ -19,6 +19,7 @@
           devShells.default = mkShell {
             buildInputs = [
               bacon
+              aider-chat
             ];
           };
         }
