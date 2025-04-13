@@ -1,10 +1,19 @@
+use buckingham::u;
+use buckingham::Unit;
+use rhai::EvalAltResult;
 use rhai::Scope;
 use rhai::{Dynamic, Engine};
 use std::io::{self, BufRead};
 
+fn wrapped_u(input: &str) -> Result<Unit, Box<EvalAltResult>> {
+    u(input).map_err(|_| "Whoops!".into())
+}
+
 fn main() -> io::Result<()> {
     // Initialize Rhai engine
-    let engine = Engine::new();
+    let mut engine = Engine::new();
+
+    engine.register_fn("m", wrapped_u);
 
     // Read from stdin
     let stdin = io::stdin();
