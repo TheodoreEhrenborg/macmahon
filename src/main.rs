@@ -25,6 +25,12 @@ fn main() -> io::Result<()> {
     for line_result in reader.lines() {
         let line = line_result?;
 
+        // Check if the line is empty or contains only whitespace
+        if line.trim().is_empty() {
+            println!("{}", line);
+            continue;
+        }
+
         // Extract the expression (everything before "=>" if it exists)
         let expression = match line.find("=>") {
             Some(pos) => line[..pos].trim(),
