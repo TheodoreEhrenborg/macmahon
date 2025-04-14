@@ -20,6 +20,7 @@
             buildInputs = [
               bacon
               aider-chat
+              trunk
             ];
           };
         }

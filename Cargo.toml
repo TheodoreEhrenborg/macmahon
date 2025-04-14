@@ -12,3 +12,4 @@ readme = "README.md"
 [dependencies]
 buckingham = "0.1.0"
 rhai = "1.21.0"
+yew = { git = "https://github.com/yewstack/yew/", features = ["csr"] }
