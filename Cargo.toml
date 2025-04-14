@@ -1,7 +1,13 @@
 [package]
-name = "rust_calculator"
+name = "macmahon"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+description = "Calculate fast"
+repository = "https://github.com/TheodoreEhrenborg/macmahon"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 buckingham = "0.1.0"
