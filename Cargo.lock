@@ -524,6 +524,7 @@ version = "0.1.0"
 dependencies = [
  "buckingham",
  "rhai",
+ "web-sys",
  "yew",
 ]
 
