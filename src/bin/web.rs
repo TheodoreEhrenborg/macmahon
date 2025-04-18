@@ -26,7 +26,10 @@ fn text_editor() -> Html {
                 oninput={on_text_input}
                 style="flex: 1; min-height: 200px;"
             />
-            <div class="display-area" style="flex: 1; padding: 8px; border: 1px solid #ccc; background-color: #f9f9f9;">
+            <div
+                class="display-area"
+                style="flex: 1; padding: 8px; border: 1px solid #ccc; background-color: #f9f9f9; white-space: pre-wrap;"
+            >
                 {display_value}
             </div>
         </div>
