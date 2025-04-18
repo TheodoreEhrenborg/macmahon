@@ -1,13 +1,26 @@
 use web_sys::HtmlTextAreaElement;
 use yew::prelude::*;
 
+// Import the calculator module
+use crate::calculator::Calculator;
+
 #[function_component(TextEditor)]
 fn text_editor() -> Html {
     // Create state for the textarea content
     let value = use_state(|| "I am writing a long story...".to_string());
-
-    // Display value (uppercase version)
-    let display_value = value.to_uppercase();
+    
+    // Create a calculator instance
+    let calculator = use_mut_ref(|| Calculator::new());
+    
+    // Process the input through the calculator
+    let display_value = {
+        let mut calc = calculator.borrow_mut();
+        let input_lines = (*value).split('\n');
+        let processed_lines: Vec<String> = input_lines
+            .map(|line| calc.evaluate(line))
+            .collect();
+        processed_lines.join("\n")
+    };
 
     // Callback for handling text input changes
     let on_text_input = {
