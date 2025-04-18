@@ -20,9 +20,13 @@ fn text_editor() -> Html {
     };
 
     html! {
-        <div class="content-area">
-            <textarea value={(*value).clone()} oninput={on_text_input} />
-            <div class="display-area">
+        <div class="content-area" style="display: flex; gap: 20px;">
+            <textarea
+                value={(*value).clone()}
+                oninput={on_text_input}
+                style="flex: 1; min-height: 200px;"
+            />
+            <div class="display-area" style="flex: 1; padding: 8px; border: 1px solid #ccc; background-color: #f9f9f9;">
                 {display_value}
             </div>
         </div>
