@@ -2,7 +2,7 @@ use web_sys::HtmlTextAreaElement;
 use yew::prelude::*;
 
 // Import the calculator module
-use crate::calculator::Calculator;
+use macmahon::calculator::Calculator;
 
 #[function_component(TextEditor)]
 fn text_editor() -> Html {
