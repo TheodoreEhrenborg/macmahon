@@ -9,8 +9,12 @@ readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[workspace]
+members = [
+    "calculator"
+]
+
 [dependencies]
-buckingham = "0.1.0"
-rhai = {version = "1.21.0", features = ["wasm-bindgen"]}
+calculator = { path = "./calculator", features = ["wasm"] }
 web-sys = "0.3.77"
 yew = { git = "https://github.com/yewstack/yew/", features = ["csr"] }

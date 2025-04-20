@@ -1,0 +1,12 @@
+[package]
+name = "calculator"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+buckingham = "0.1.0"
+rhai = { version = "1.21.0", optional = true }
+
+[features]
+default = []
+wasm = ["rhai/wasm-bindgen"]

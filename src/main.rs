@@ -1,6 +1,4 @@
-mod calculator;
-
-use calculator::Calculator;
+use macmahon::Calculator;
 use std::io::{self, BufRead};
 
 fn main() -> io::Result<()> {
