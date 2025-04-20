@@ -11,6 +11,6 @@ readme = "README.md"
 
 [dependencies]
 buckingham = "0.1.0"
-rhai = "1.21.0"
+rhai = {version = "1.21.0", features = ["wasm-bindgen"]}
 web-sys = "0.3.77"
 yew = { git = "https://github.com/yewstack/yew/", features = ["csr"] }
