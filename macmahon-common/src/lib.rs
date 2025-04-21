@@ -15,7 +15,7 @@ impl Calculator {
     pub fn new() -> Self {
         let mut engine = Engine::new();
         engine.register_fn("m", wrapped_u);
-        
+
         Calculator {
             engine,
             scope: Scope::new(),
@@ -35,7 +35,10 @@ impl Calculator {
         };
 
         // Evaluate the expression
-        match self.engine.eval_with_scope::<Dynamic>(&mut self.scope, expression) {
+        match self
+            .engine
+            .eval_with_scope::<Dynamic>(&mut self.scope, expression)
+        {
             Ok(result) => format!("{} => {}", expression, result),
             Err(_) => input.to_string(), // Keep original line if evaluation fails
         }
