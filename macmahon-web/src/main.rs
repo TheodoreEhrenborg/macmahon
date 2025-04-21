@@ -10,14 +10,12 @@ fn text_editor() -> Html {
     
     // Create a calculator instance
     let calculator = use_mut_ref(|| Calculator::new());
-    
+
     // Process the input through the calculator
     let display_value = {
         let mut calc = calculator.borrow_mut();
         let input_lines = (*value).split('\n');
-        let processed_lines: Vec<String> = input_lines
-            .map(|line| calc.evaluate(line))
-            .collect();
+        let processed_lines: Vec<String> = input_lines.map(|line| calc.evaluate(line)).collect();
         processed_lines.join("\n")
     };
 
