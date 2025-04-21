@@ -8,4 +8,4 @@ repository = "https://github.com/TheodoreEhrenborg/macmahon"
 readme = "../README.md"
 
 [dependencies]
-calculator = { path = "../macmahon-common"}
+macmahon-common = { path = "../macmahon-common"}
