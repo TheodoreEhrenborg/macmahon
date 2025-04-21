@@ -4,7 +4,3 @@ members = [ "macmahon",
     "macmahon-common"
 , "macmahon-web"]
 
-#[dependencies]
-#calculator = { path = "./macmahon-common", features = ["wasm"] }
-#web-sys = "0.3.77"
-#yew = { git = "https://github.com/yewstack/yew/", features = ["csr"] }
