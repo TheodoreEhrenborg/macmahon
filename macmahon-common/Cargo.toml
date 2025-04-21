@@ -5,8 +5,7 @@ edition = "2021"
 
 [dependencies]
 buckingham = "0.1.0"
-rhai = { version = "1.21.0", optional = true }
+rhai = { version = "1.21.0"}
 
 [features]
-default = []
 wasm = ["rhai/wasm-bindgen"]
