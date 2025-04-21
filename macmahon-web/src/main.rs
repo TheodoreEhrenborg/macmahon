@@ -6,8 +6,33 @@ use macmahon_common::Calculator;
 #[function_component(TextEditor)]
 fn text_editor() -> Html {
     // Create state for the textarea content
-    let value = use_state(|| "I am writing a long story...".to_string());
-    
+    let value = use_state(|| {
+        r#"Any expression on its own line gets evaluated:
+1 + 2 * 3
+But not expressions mixed with text: 2+2
+
+You can also define variables and use basic functions
+let x = 42.0
+log(x)
+sin(x)**2 + cos(x)**2
+
+
+Try changing the years:
+let this_year = 2025
+let retirement = 2065
+let money_now = 100.0
+let growth = 0.05
+let money_then = money_now * (1+growth) ** (retirement - this_year)
+money_then
+
+Be careful with integer division:
+10/3
+10./3
+10/3.0
+"#
+        .to_string()
+    });
+
     // Create a calculator instance
     let calculator = use_mut_ref(|| Calculator::new());
 
