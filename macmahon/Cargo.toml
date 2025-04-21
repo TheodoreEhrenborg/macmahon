@@ -2,5 +2,10 @@
 name = "macmahon"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+description = "Calculate fast"
+repository = "https://github.com/TheodoreEhrenborg/macmahon"
+readme = "../README.md"
 
 [dependencies]
+calculator = { path = "../macmahon-common"}

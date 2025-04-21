@@ -48,7 +48,6 @@ name = "calculator"
 version = "0.1.0"
 dependencies = [
  "buckingham",
- "macmahon",
  "rhai",
 ]
 
@@ -134,12 +133,13 @@ checksum = "13dc2df351e3202783a1fe0d44375f7295ffb4049267b0f3018346dc122a1d94"
 [[package]]
 name = "macmahon"
 version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b0f3e8266ebc4d0d861f56fe9078f756b9b5afc6d4d9ae839e564f12890a8b75"
 dependencies = [
- "buckingham",
- "rhai",
+ "calculator",
 ]
+
+[[package]]
+name = "macmahon-web"
+version = "0.1.0"
 
 [[package]]
 name = "memchr"
