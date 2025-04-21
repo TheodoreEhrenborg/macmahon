@@ -33,6 +33,10 @@ jobs:
         with:
           version: 'v0.21.13'
 
+      - name: Add target
+        run: |
+          rustup target add wasm32-unknown-unknown
+
       - name: Build project
         run: |
           cd macmahon-web
