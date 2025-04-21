@@ -1,20 +1,21 @@
-[package]
-name = "macmahon"
-version = "0.1.0"
-edition = "2021"
-license = "MIT"
-description = "Calculate fast"
-repository = "https://github.com/TheodoreEhrenborg/macmahon"
-readme = "README.md"
+#[package]
+#name = "macmahon"
+#version = "0.1.0"
+#edition = "2021"
+#license = "MIT"
+#description = "Calculate fast"
+#repository = "https://github.com/TheodoreEhrenborg/macmahon"
+#readme = "README.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [workspace]
-members = [
-    "calculator"
-]
+resolver = "2"
+members = [ "macmahon",
+    "macmahon-common"
+, "macmahon-web"]
 
-[dependencies]
-calculator = { path = "./calculator", features = ["wasm"] }
-web-sys = "0.3.77"
-yew = { git = "https://github.com/yewstack/yew/", features = ["csr"] }
+#[dependencies]
+#calculator = { path = "./macmahon-common", features = ["wasm"] }
+#web-sys = "0.3.77"
+#yew = { git = "https://github.com/yewstack/yew/", features = ["csr"] }
