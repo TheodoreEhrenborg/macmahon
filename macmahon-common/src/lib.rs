@@ -14,7 +14,10 @@ pub struct Calculator {
 impl Calculator {
     pub fn new() -> Self {
         let mut engine = Engine::new();
-        engine.register_fn("m", wrapped_u);
+        engine
+            .register_fn("m", wrapped_u)
+            .disable_symbol("print")
+            .disable_symbol("return");
 
         Calculator {
             engine,
