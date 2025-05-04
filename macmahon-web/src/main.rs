@@ -9,7 +9,7 @@ fn text_editor() -> Html {
     let value = use_state(|| {
         r#"Any expression on its own line gets evaluated:
 1 + 2 * 3
-But not expressions mixed with text: 2+2
+But not expressions on the same line as text: 2+2
 --------
 You can also define variables and use basic functions
 let x = 42.0
